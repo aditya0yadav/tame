@@ -129,6 +129,7 @@ SurveyQualification.belongsTo(Survey, {
 });
 
 async function createSurvey(req, res) {
+    console.log(req.body);
     try {
         const {
             survey_id, survey_name, account_name, country_language, industry, study_type,
