@@ -132,7 +132,7 @@ async function createSurvey(req, res) {
     const value = req.body;
     value.forEach(element => {
         console.log(element)
-    });
+    
     try {
         const {
             survey_id, survey_name, account_name, country_language, industry, study_type,
@@ -169,6 +169,7 @@ async function createSurvey(req, res) {
         console.error(error);
         res.status(500).json({ message: 'Error creating survey', error });
     }
+    });
 }
 
 app.post('/createSurvey', createSurvey);  // Added route to use the createSurvey function
