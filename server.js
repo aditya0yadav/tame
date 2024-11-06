@@ -1,11 +1,17 @@
 const express = require('express');  // Corrected import of express
 const cors = require('cors');
+const bodyParser = require('body-parser');
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('./config'); 
 
 const app = express();  // Instantiate app using express
 app.use(cors());
 app.use(express.json());
+
+
+app.use(bodyParser.json({ limit: '10mb' })); // Adjust the size as needed
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 class Survey extends Model {}
 
