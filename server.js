@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use(bodyParser.json({ limit: '10mb' })); // Adjust the size as needed
-app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
+app.use(bodyParser.json({ limit: '100mb' })); // Adjust the size as needed
+app.use(bodyParser.urlencoded({ extended: true, limit: '100mb' }));
 
 class Survey extends Model {}
 
